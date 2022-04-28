@@ -14,6 +14,7 @@ class ClientList(APIView):
 
         return Response(serializer.data)
 
+
 class ClientDetails(APIView):
     def get(self, request, pk):
         #passing in a Primary Key, and searching via ID
