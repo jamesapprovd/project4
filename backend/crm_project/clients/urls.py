@@ -1,12 +1,13 @@
 from django.urls import path
-from crm_project.clients.migrations import views
+from . import views
+
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('view_all_clients/', views.clients_list.as_view(), name='view_all_clients'),  # get
-    path('view_client/<str:pk>', views.client_detail.as_view(), name='view_client'),  # get
-    path('add_client/', views.add_client.as_view(), name='add_client'), #post
-    path('update_client/<str:pk>', views.update_client.as_view(), name='update_client'), #post
-    path('del_client/<str:pk>', views.del_client.as_view(), name='del_client'), #del
+    # path('', views.index, name='index'),
+    path('view_all_clients/', views.ClientList.as_view(), name='view_all_clients'),  # get
+    path('view_client/<str:pk>', views.ClientDetails.as_view(), name='view_client'),  # get
+    path('add_client/', views.ClientCreate.as_view(), name='add_client'), #post
+    path('update_client/<str:pk>', views.ClientUpdate.as_view(), name='update_client'), #post
+    path('del_client/<str:pk>', views.ClientDelete.as_view(), name='del_client'), #del
 ]
