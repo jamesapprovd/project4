@@ -1,5 +1,5 @@
 from django.db import models
-from ..clients.models import Client
+from clients.models import Client
 
 
 # Create your models here.
