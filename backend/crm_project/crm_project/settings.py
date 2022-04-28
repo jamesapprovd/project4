@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'clients',
     'projects',
     'account',
+    'signatory',
 ]
 
 MIDDLEWARE = [
