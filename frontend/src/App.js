@@ -1,12 +1,21 @@
 import React from "react";
+// routes
+import Router from "./routes";
+// theme
+import ThemeProvider from "./theme";
+// components
+import ScrollToTop from "./components/ScrollToTop";
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <h2>RoboCorp</h2>
-      <img src="https://i.imgur.com/zcwGl5R.png?1" alt="RoboCorp Logo"></img>
-    </div>
+    <ThemeProvider>
+      <ScrollToTop />
+      <Router />
+      <>
+        <p>Test: Why no show?</p>
+      </>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

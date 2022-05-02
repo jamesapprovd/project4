@@ -1,6 +1,23 @@
-import ReactDOM from 'react-dom';
+// scroll bar
+import "simplebar/src/simplebar.css";
 
-import './index.css';
-import App from './App';
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+// import { HelmetProvider } from "react-helmet-async";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//
+import App from "./App";
+
+// ----------------------------------------------------------------------
+
+ReactDOM.render(
+  // <HelmetProvider>
+  <BrowserRouter>
+    <App />
+    <>
+      <p>Test</p>
+    </>
+  </BrowserRouter>,
+  // </HelmetProvider>,
+  document.getElementById("root")
+);
