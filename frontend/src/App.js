@@ -1,34 +1,18 @@
 import React from "react";
-// routes
-import { Routes, Route, Navigate } from "react-router-dom";
-// theme
-import ThemeProvider from "./theme";
-// components
-import ScrollToTop from "./components/ScrollToTop";
-
-// layouts
-import DashboardLayout from "./layouts/dashboard";
-import DashboardApp from "./pages/DashboardApp";
-//
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Home from "./pages/Home";
 import Clients from "./pages/Clients";
-// import Login from "./pages/Login";
-import NotFound from "./pages/Page404";
-// import Register from "./pages/Register";
-import Projects from "./pages/Projects";
+// import Projects from "./pages/Projects";
 
 const App = () => {
   return (
     <>
-      {/* <ThemeProvider />
-    <ScrollToTop /> */}
+      <NavBar />
       <Routes>
-        <Route path="/" element={<DashboardApp />} />
-        {/* <Route path="/login" element={<Login />} /> */}
-        {/* <Route path="/register" element={<Register />} /> */}
+        <Route path="/" element={<Home />} />
         <Route path="/clients" element={<Clients />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="404" element={<NotFound />} />
-        <Route path="*" element={<Navigate to="/dashboard/app" />} />
+        {/* <Route path="/projects" element={<Projects />} /> */}
       </Routes>
     </>
   );

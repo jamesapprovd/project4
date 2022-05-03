@@ -1,0 +1,36 @@
+.navbar {
+  height: 3rem;
+  background-color: #444655;
+}
+
+.navbar nav {
+  height: 100%;
+}
+
+.navbar ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: right;
+}
+
+.navbar li {
+  margin: 0 1rem;
+  width: 6rem;
+}
+
+.navbar a {
+  color: #a9aabc;
+  text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar a:active,
+.navbar a.active {
+  color: whitesmoke;
+  padding-bottom: 0.25rem;
+  border-bottom: 4px solid whitesmoke;
+}
