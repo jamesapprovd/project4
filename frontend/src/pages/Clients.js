@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import ClientCard from "../components/ClientCard";
-import InputBox from "../components/InputBox";
+import ClientInputBox from "../components/ClientInputBox";
 
 const Clients = () => {
   const [index, setIndex] = useState(null);
@@ -23,24 +23,6 @@ const Clients = () => {
       representative: client.representative,
       isPerson: false,
     };
-
-    // let userId = user.userId;
-    // axios
-    //   .post(
-    //     0`http://127.0.0.1:5001/clients/add_client`,
-    //     {
-    //       newClient,
-    //       //   userId,
-    //     },
-    //     { withCredentials: true }
-    //   )
-    //   .then((res) => {
-    //     if (res.data.status === "ok") {
-    //       console.log(res.data);
-    //     }
-    //   });
-    // dispatch(ADD_CLIENT(newClient));
-    // setClient({ name: "", id_number: "", representative: "", isPerson: "" });
   };
 
   return (
@@ -54,13 +36,7 @@ const Clients = () => {
         </div>
         <div>
           <div>
-            <InputBox
-            // text="Create a new client"
-            // setClient={setClient}
-            // name={client.name}
-            // representative={client.representative}
-            // onSubmit={onSubmitClient}
-            />
+            <ClientInputBox />
           </div>
         </div>
       </div>

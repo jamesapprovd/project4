@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const InputBox = (props) => {
+const ClientInputBox = () => {
   const [name, setName] = useState("");
   const [id_number, setIdNumber] = useState("");
   const [representative, setRepresentative] = useState("");
@@ -56,4 +56,4 @@ const InputBox = (props) => {
   );
 };
 
-export default InputBox;
+export default ClientInputBox;

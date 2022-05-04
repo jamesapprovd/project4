@@ -17,11 +17,17 @@ const ClientCard = (props) => {
   const [client, setClient] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5001/clients/view_client/").then((res) => {
-      const data = res.data;
-      console.log(data);
-      setClient(data);
-    });
+    const getData = async () => {
+      await axios
+        .get("http://127.0.0.1:8000/clients/view_all_clients/")
+        .then((res) => {
+          const data = res.data;
+          console.log(data);
+          setClient(data);
+        })
+        .catch((err) => console.error(err));
+    };
+    getData();
   }, []);
 
   // const handleDelete = (event) => {
@@ -29,7 +35,7 @@ const ClientCard = (props) => {
   //   let cientCardId =
   //     clientCard[event.target.parentNode.parentNode.id].clientCardId;
   //   axios
-  //     .post(`http://127.0.0.1:5001/clients/del_client`, {
+  //     .post(`http://127.0.0.1:8000/clients/del_client`, {
   //       userId,
   //       clientCardId,
   //     })
