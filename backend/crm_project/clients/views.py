@@ -27,7 +27,7 @@ class ClientDetails(APIView):
 class ClientCreate(APIView):
     def put(self, request):
         serializer = ClientSerializer(data=request.data)
-
+        print(serializer)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

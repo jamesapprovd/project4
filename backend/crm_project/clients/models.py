@@ -7,7 +7,7 @@ class Client (models.Model):
     name = models.CharField(max_length=40)
     id_number = models.CharField(max_length=20)
     representative = models.CharField(max_length=40)
-    is_Person = models.BooleanField()
+    is_Person = models.BooleanField(default=False)
     dateOfCreation = models.DateTimeField(verbose_name='date created', auto_now_add=True)
 
     def __str__(self):

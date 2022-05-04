@@ -11,10 +11,10 @@ const InputBox = (props) => {
   const handleRepresentativeChange = (event) =>
     setRepresentative(event.target.value);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios
-      .put("http://localhost:5001/clients/add_client/", {
+    await axios
+      .put("http://127.0.0.1:8000/clients/add_client/", {
         name,
         id_number,
         representative,
@@ -22,7 +22,8 @@ const InputBox = (props) => {
       .then((res) => {
         const data = res.data;
         console.log(data);
-      });
+      })
+      .catch((err) => console.error(err));
   };
 
   return (
