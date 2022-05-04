@@ -1,16 +1,21 @@
 import React, { useState } from "react";
-import EditForm from "./EditForm";
+import ClientEditForm from "./ClientEditForm";
 
 const Card = ({ name, id, id_number, representative, handleDelete }) => {
   const [hasViewed, setHasViewed] = useState(false);
   const handleView = (event) => {
-    setHasViewed(true);
+    setHasViewed((prevState) => !prevState);
   };
 
   return (
     <>
       {hasViewed ? (
-        <EditForm />
+        <ClientEditForm
+          name={name}
+          id={id}
+          id_number={id_number}
+          representative={representative}
+        />
       ) : (
         <div>
           <p>{name}</p>

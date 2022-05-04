@@ -15,9 +15,9 @@ const Home = () => {
               height="200"
             ></img>
           </div>
-          <p>Client List</p>
+          <p>Manage your client lists</p>
           <br />
-          <p>Projects</p>
+          <p>Track your projects</p>
         </div>
         <div className="col-sm-9">
           <Clients />
