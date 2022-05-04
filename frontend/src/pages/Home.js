@@ -16,7 +16,41 @@ const Home = () => {
               height="200"
             ></img>
           </div>
-          <p>Manage your client lists</p>
+
+          <div class="card">
+            <div class="card-body">
+              Track your clients and projects with RoboCorp
+            </div>
+          </div>
+
+          <br />
+
+          <div class="list-group">
+            <li class="list-group-item list-group-item-dark">
+              Document Repository
+            </li>
+            <a href="#" class="list-group-item list-group-item-action">
+              Client Signup Form
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Non-disclosure Agreement
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Engagement Letter
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Purchase Order
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Payment Reminder
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Letter of Demand
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+              Termination Letter
+            </a>
+          </div>
         </div>
         <div className="col-sm-9">
           <Clients />
