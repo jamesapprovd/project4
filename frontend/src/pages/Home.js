@@ -20,8 +20,8 @@ const Home = () => {
           <p>Projects</p>
         </div>
         <div className="col-sm-9">
-          <Clients />
           <p>Clients info here</p>
+          <Clients />
         </div>
       </div>
     </div>

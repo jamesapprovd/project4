@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import ViewClientCard from "./ViewClientCard";
-// import axios from "axios";
+import axios from "axios";
 
 //TO DO: set buttonstyle CSS
 
@@ -13,6 +13,16 @@ const ClientCard = (props) => {
     props.setIndex(event.target.id); //TO DO: console.log to see what the ID is
     setHasViewed(true);
   };
+
+  const [client, setClient] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5001/clients/view_client/").then((res) => {
+      const data = res.data;
+      console.log(data);
+      setClient(data);
+    });
+  }, []);
 
   // const handleDelete = (event) => {
   //   event.preventDefault();
@@ -43,7 +53,7 @@ const ClientCard = (props) => {
         </>
       ) : (
         <div>
-          {ClientCard.map((element, index) => {
+          {client.map((element, index) => {
             return (
               <div id={index} key={uuidv4()}>
                 <p>{element.name}</p>

@@ -55,11 +55,11 @@ const Clients = () => {
         <div>
           <div>
             <InputBox
-              text="Create a new client"
-              setClient={setClient}
-              name={client.name}
-              representative={client.representative}
-              onSubmit={onSubmitClient}
+            // text="Create a new client"
+            // setClient={setClient}
+            // name={client.name}
+            // representative={client.representative}
+            // onSubmit={onSubmitClient}
             />
           </div>
         </div>
