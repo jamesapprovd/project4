@@ -1,5 +1,6 @@
 import React from "react";
 import Clients from "./Clients";
+// import Projects from "./Projects";
 
 const Home = () => {
   return (
