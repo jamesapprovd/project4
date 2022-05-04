@@ -29,16 +29,17 @@ const Clients = () => {
     <>
       <div>
         <div>
+          <ClientInputBox />
+        </div>
+        <br />
+        <div>
           Client List
           <div>
+            {/* <div style={{ display: flex, flex-wrap: wrap }}> */}
             <ClientCard index={index} setIndex={setIndex} />
           </div>
         </div>
-        <div>
-          <div>
-            <ClientInputBox />
-          </div>
-        </div>
+        <div></div>
       </div>
     </>
   );

@@ -17,7 +17,7 @@ const ClientCard = (props) => {
   const [client, setClient] = useState([]);
 
   useEffect(() => {
-    const getData = async () => {
+    const getAllData = async () => {
       await axios
         .get("http://127.0.0.1:8000/clients/view_all_clients/")
         .then((res) => {
@@ -27,25 +27,25 @@ const ClientCard = (props) => {
         })
         .catch((err) => console.error(err));
     };
-    getData();
+    getAllData();
   }, []);
 
-  // const handleDelete = (event) => {
-  //   event.preventDefault();
-  //   let cientCardId =
-  //     clientCard[event.target.parentNode.parentNode.id].clientCardId;
-  //   axios
-  //     .post(`http://127.0.0.1:8000/clients/del_client`, {
-  //       userId,
-  //       clientCardId,
-  //     })
-  //     .then((res) => {
-  //       if (res.data.status === "ok") {
-  //         console.log(res.data);
-  //       }
-  //     });
-  //   dispatch(REMOVE_CLIENT(clientCardId));
-  // };
+  const handleDelete = (event, id) => {
+    event.preventDefault();
+    console.log(id);
+
+    const deleteClientData = async () => {
+      await axios
+        .delete(`http://127.0.0.1:8000/clients/del_client/${id}`)
+        .then((res) => {
+          if (res.data.status === "ok") {
+            console.log(res.data);
+          }
+        })
+        .catch((err) => console.error(err));
+    };
+    deleteClientData();
+  };
 
   return (
     <>
@@ -67,8 +67,10 @@ const ClientCard = (props) => {
                 <p>{element.representative}</p>
                 <div>
                   {/* <div id={index}> */}
-                  <button onClick={handleView}>View</button>
-                  {/* <button onClick={handleDelete}>Delete</button> */}
+                  <button onClick={handleView}>Edit</button>
+                  <button onClick={(e) => handleDelete(e, element.id)}>
+                    Delete
+                  </button>
                 </div>
               </div>
             );

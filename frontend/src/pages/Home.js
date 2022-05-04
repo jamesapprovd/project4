@@ -20,7 +20,6 @@ const Home = () => {
           <p>Projects</p>
         </div>
         <div className="col-sm-9">
-          <p>Clients info here</p>
           <Clients />
         </div>
       </div>
