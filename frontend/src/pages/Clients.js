@@ -14,16 +14,16 @@ const Clients = () => {
     isPerson: "False",
   });
 
-  const onSubmitClient = (event) => {
-    event.preventDefault();
-    const newClient = {
-      id: uuidv4(),
-      name: client.name,
-      id_number: client.id_number,
-      representative: client.representative,
-      isPerson: false,
-    };
-  };
+  // const onSubmitClient = (event) => {
+  //   event.preventDefault();
+  //   const newClient = {
+  //     id: uuidv4(),
+  //     name: client.name,
+  //     id_number: client.id_number,
+  //     representative: client.representative,
+  //     isPerson: false,
+  //   };
+  // };
 
   return (
     <>

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import EditForm from "./EditForm.js";
 import ClientCard from "./ClientCard.js";
-
-// import axios from "axios";
+import axios from "axios";
 
 // const buttonStyle =
 //   "text-sm bg-green border-2 border-green rounded-md hover:border-purple hover:text-black mt-2 ml-2 px-1";
@@ -20,36 +19,34 @@ const ViewClientCard = (props) => {
   };
 
   // this shows view for edit with default value
-  const handleEdit = (event) => {
+  const handleEdit = (event, id) => {
     event.preventDefault();
-    // setName(clientCardData.name);
-    // setRepresentative(clientCardData.representative);
-    //how to get the relevant details here?
+    console.log(id);
     setHasEdit(true);
   };
 
   //this updates the client card when the "edit" button is clicked
-  const handleUpdate = (event) => {
-    event.preventDefault();
-    // let userId = user.userId;
-    let clientCardId = clientCardId;
-    let editedClientCard = {
-      name: name,
-      representative: representative,
-    };
-    // axios
-    //   .put(`http://127.0.0.1:5001/clients/update_client`, {
-    //     clientCardId,
-    //     editedClientCard,
-    //   })
-    //   .then((res) => {
-    //     if (res.data.status === "ok") {
-    //       console.log(res.data);
-    //     }
-    //   });
-    // dispatch(EDIT_CLIENT({ clientCardId, editedClientCard }));
-    setHasEdit(false);
+  // const handleUpdate = (event) => {
+  //   event.preventDefault();
+  //   let clientCardId = clientCardId;
+  //   let editedClientCard = {
+  //     name: { name },
+  //     user_id: { id_number },
+  //     representative: { representative },
+  //   };
+
+  const editClientData = async () => {
+    await axios
+      .patch(`http://127.0.0.1:5001/clients/update_client/${id}`)
+      .then((res) => {
+        if (res.data.status === "ok") {
+          console.log(res.data);
+        }
+      })
+      .catch((err) => console.error(err));
   };
+  editClientData();
+  setHasEdit(false);
 
   return (
     <>
