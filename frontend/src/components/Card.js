@@ -18,15 +18,34 @@ const Card = ({ name, id, id_number, representative, handleDelete }) => {
         />
       ) : (
         <div>
-          <p>{name}</p>
+          <div class="card">
+            <div class="card-header">Company</div>
+            <div class="card-body">
+              <h5 class="card-title">{name}</h5>
+              <p class="card-text">{id_number}</p>
+              <p class="card-text">{representative}</p>
+              <a href="#" class="btn btn-secondary" onClick={handleView}>
+                Edit
+              </a>
+              <a
+                href="#"
+                class="btn btn-secondary"
+                onClick={(e) => handleDelete(e, id)}
+              >
+                Delete
+              </a>
+            </div>
+          </div>
+
+          {/* <p>{name}</p>
           <p>{id_number}</p>
-          <p>{representative}</p>
+          <p>{representative}</p> */}
         </div>
       )}
-      <div>
-        <button onClick={handleView}>Edit</button>
-        <button onClick={(e) => handleDelete(e, id)}>Delete</button>
-      </div>
+      {/* <div> */}
+      {/* <button onClick={handleView}>Edit</button>
+      <button onClick={(e) => handleDelete(e, id)}>Delete</button> */}
+      {/* </div> */}
     </>
   );
 };

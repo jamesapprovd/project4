@@ -39,7 +39,7 @@ const ClientInputBox = () => {
           />
           <input
             type="text"
-            placeholder="company number or person ID number"
+            placeholder="company number"
             onChange={handleIdNumberChange}
             value={id_number}
           />
@@ -49,7 +49,10 @@ const ClientInputBox = () => {
             onChange={handleRepresentativeChange}
             value={representative}
           />
-          <button type="submit">Create Client</button>
+          <button type="submit" class="btn btn-secondary">
+            Create Client
+          </button>
+          {/* <button type="submit">Create Client</button> */}
         </div>
       </form>
     </div>

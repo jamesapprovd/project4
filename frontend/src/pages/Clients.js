@@ -4,6 +4,7 @@ import ClientInputBox from "../components/ClientInputBox";
 
 const Clients = () => {
   const [index, setIndex] = useState(null);
+
   // const [client, setClient] = useState({
   //   id: "",
   //   name: "",

@@ -16,8 +16,6 @@ const Home = () => {
             ></img>
           </div>
           <p>Manage your client lists</p>
-          <br />
-          <p>Track your projects</p>
         </div>
         <div className="col-sm-9">
           <Clients />
