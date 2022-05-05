@@ -43,6 +43,13 @@ const ClientCard = ({
               >
                 Delete
               </a>
+              <a
+                href="/projects"
+                class="btn btn-secondary ms-1"
+                // onClick={handleProject}
+              >
+                Projects
+              </a>
             </div>
           </div>
 
