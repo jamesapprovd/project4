@@ -45,6 +45,8 @@ const Projects = () => {
     };
     await submitProjectData();
     getAllProjectData();
+    setTitle("");
+    setProjectInfo("");
   };
 
   const handleDelete = async (event, id) => {
@@ -95,11 +97,6 @@ const Projects = () => {
           return (
             <>
               <br />
-              {/* <div id={index} key={uuidv4}>
-              <p>{element.project_title}</p>
-              <p>{element.project_info}</p>
-            </div> */}
-
               <div class="card" id={index} key={uuidv4}>
                 <div class="card-header">Project</div>
                 <div class="card-body">

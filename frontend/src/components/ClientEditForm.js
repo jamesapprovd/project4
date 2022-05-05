@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-// const buttonStyle = "";
-
 const ClientEditForm = (props) => {
   const [editName, setEditName] = useState(props.name);
   const handleNameChange = (event) => setEditName(event.target.value);
