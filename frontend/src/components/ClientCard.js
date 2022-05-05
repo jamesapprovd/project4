@@ -1,67 +1,61 @@
-import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
-import Card from "./Card";
+import React, { useState } from "react";
+import ClientEditForm from "./ClientEditForm";
 
-//TO DO: set buttonstyle CSS
-
-const ClientCard = (props) => {
-  // const [index, setIndex] = useState("");
-  // const [hasViewed, setHasViewed] = useState(false);
-
-  // const handleView = (event) => {
-  //   props.setIndex(event.target.id); //TO DO: console.log to see what the ID is
-  //   setHasViewed(true);
-  // };
-
-  const [client, setClient] = useState([]);
-
-  useEffect(() => {
-    const getAllData = async () => {
-      await axios
-        .get("http://127.0.0.1:8000/clients/view_all_clients/")
-        .then((res) => {
-          const data = res.data;
-          console.log(data);
-          setClient(data);
-        })
-        .catch((err) => console.error(err));
-    };
-    getAllData();
-  }, []);
-
-  const handleDelete = (event, id) => {
-    event.preventDefault();
-    console.log("DELETING", id);
-
-    const deleteClientData = async () => {
-      await axios
-        .delete(`http://127.0.0.1:8000/clients/del_client/${id}`)
-        .then((res) => {
-          if (res.data.status === "ok") {
-            console.log(res.data);
-          }
-        })
-        .catch((err) => console.error(err));
-    };
-    deleteClientData();
+const ClientCard = ({
+  name,
+  id,
+  id_number,
+  representative,
+  handleDelete,
+  getAllData,
+}) => {
+  const [hasViewed, setHasViewed] = useState(false);
+  const handleView = (event) => {
+    setHasViewed((prevState) => !prevState);
   };
 
   return (
-    <div>
-      {client.map((element, index) => {
-        return (
-          <Card
-            key={index}
-            name={element.name}
-            id={element.id}
-            id_number={element.id_number}
-            representative={element.representative}
-            handleDelete={handleDelete}
-          />
-        );
-      })}
-    </div>
+    <>
+      {hasViewed ? (
+        <ClientEditForm
+          name={name}
+          id={id}
+          id_number={id_number}
+          representative={representative}
+          getAllData={getAllData}
+          setHasViewed={setHasViewed}
+        />
+      ) : (
+        <div>
+          <div class="card">
+            <div class="card-header">Company</div>
+            <div class="card-body">
+              <h5 class="card-title">{name}</h5>
+              <p class="card-text">{id_number}</p>
+              <p class="card-text">{representative}</p>
+              <a href="#" class="btn btn-secondary" onClick={handleView}>
+                Edit
+              </a>
+              <a
+                href="#"
+                class="btn btn-secondary ms-1"
+                onClick={(e) => handleDelete(e, id)}
+              >
+                Delete
+              </a>
+            </div>
+          </div>
+
+          {/* <p>{name}</p>
+          <p>{id_number}</p>
+          <p>{representative}</p> */}
+        </div>
+      )}
+      {/* <div> */}
+      {/* <button onClick={handleView}>Edit</button>
+      <button onClick={(e) => handleDelete(e, id)}>Delete</button> */}
+      {/* </div> */}
+    </>
   );
 };
 

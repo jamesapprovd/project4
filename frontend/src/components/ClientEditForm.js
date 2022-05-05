@@ -14,7 +14,7 @@ const ClientEditForm = (props) => {
   const handleRepresentativeChange = (event) =>
     setEditRepresentative(event.target.value);
 
-  const handleEdit = (event, id) => {
+  const handleEdit = async (event, id) => {
     event.preventDefault();
     console.log("EDITING", props.id);
 
@@ -32,7 +32,9 @@ const ClientEditForm = (props) => {
         })
         .catch((err) => console.error(err));
     };
-    editClientData();
+    await editClientData();
+    await props.getAllData();
+    props.setHasViewed(false);
   };
 
   return (

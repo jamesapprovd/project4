@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 
 const ClientInputBox = () => {
+  const [client, setClient] = useState([]);
   const [name, setName] = useState("");
   const [id_number, setIdNumber] = useState("");
   const [representative, setRepresentative] = useState("");
@@ -10,6 +11,18 @@ const ClientInputBox = () => {
   const handleIdNumberChange = (event) => setIdNumber(event.target.value);
   const handleRepresentativeChange = (event) =>
     setRepresentative(event.target.value);
+
+  const getAllData = async () => {
+    await axios
+      .get("http://127.0.0.1:8000/clients/view_all_clients/")
+      .then((res) => {
+        const data = res.data;
+        console.log(data);
+        console.log("entered the loop");
+        // setClient(data);
+      })
+      .catch((err) => console.error(err));
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -24,6 +37,7 @@ const ClientInputBox = () => {
         console.log(data);
       })
       .catch((err) => console.error(err));
+    getAllData();
   };
 
   return (
@@ -52,7 +66,6 @@ const ClientInputBox = () => {
           <button type="submit" class="btn btn-secondary">
             Create Client
           </button>
-          {/* <button type="submit">Create Client</button> */}
         </div>
       </form>
     </div>
