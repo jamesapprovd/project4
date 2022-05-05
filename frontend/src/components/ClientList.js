@@ -4,8 +4,6 @@ import axios from "axios";
 import ClientCard from "./ClientCard";
 
 const ClientList = (props) => {
-  const [client, setClient] = useState([]);
-
   //This calls on mount, so that it does not call infinitely
   useEffect(() => {
     getAllData();
@@ -17,7 +15,7 @@ const ClientList = (props) => {
       .then((res) => {
         const data = res.data;
         console.log(data);
-        setClient(data);
+        props.setClient(data);
       })
       .catch((err) => console.error(err));
   };
@@ -42,7 +40,7 @@ const ClientList = (props) => {
 
   return (
     <div>
-      {client.map((element, index) => {
+      {props.client.map((element, index) => {
         return (
           <ClientCard
             key={index}

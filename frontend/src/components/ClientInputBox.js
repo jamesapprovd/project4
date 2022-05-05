@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const ClientInputBox = () => {
-  const [client, setClient] = useState([]);
+const ClientInputBox = (props) => {
   const [name, setName] = useState("");
   const [id_number, setIdNumber] = useState("");
   const [representative, setRepresentative] = useState("");
@@ -18,26 +17,30 @@ const ClientInputBox = () => {
       .then((res) => {
         const data = res.data;
         console.log(data);
-        console.log("entered the loop");
-        // setClient(data);
+        props.setClient(data);
       })
       .catch((err) => console.error(err));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await axios
-      .put("http://127.0.0.1:8000/clients/add_client/", {
-        name,
-        id_number,
-        representative,
-      })
-      .then((res) => {
-        const data = res.data;
-        console.log(data);
-      })
-      .catch((err) => console.error(err));
-    getAllData();
+    console.log("ADDING");
+
+    const submitClientData = async () => {
+      await axios
+        .put("http://127.0.0.1:8000/clients/add_client/", {
+          name,
+          id_number,
+          representative,
+        })
+        .then((res) => {
+          const data = res.data;
+          console.log(data);
+        })
+        .catch((err) => console.error(err));
+    };
+    await submitClientData();
+    await getAllData();
   };
 
   return (

@@ -44,6 +44,7 @@ const ClientEditForm = (props) => {
         <div>
           <input
             type="text"
+            class="card-body"
             placeholder="name"
             defaultValue={props.name}
             value={editName}
@@ -51,6 +52,7 @@ const ClientEditForm = (props) => {
           />
           <input
             type="text"
+            class="card-body"
             placeholder="id number"
             defaultValue={props.id_number}
             value={editId}
@@ -58,12 +60,15 @@ const ClientEditForm = (props) => {
           />
           <input
             type="text"
+            class="card-body"
             placeholder="representative"
             defaultValue={props.representative}
             value={editRepresentative}
             onChange={handleRepresentativeChange}
           />
-          <button onClick={handleEdit}>Update data</button>
+          <button class="btn btn-secondary ms-1" onClick={handleEdit}>
+            Update data
+          </button>
         </div>
       </form>
     </>

@@ -4,19 +4,23 @@ import ClientInputBox from "../components/ClientInputBox";
 
 const Clients = () => {
   const [index, setIndex] = useState(null);
-
+  const [client, setClient] = useState([]);
   return (
     <>
       <div>
         <div>
-          <ClientInputBox />
+          <ClientInputBox setClient={setClient} />
         </div>
         <br />
         <div>
           Client List
           <div>
-            {/* <div style={{ display: flex, flex-wrap: wrap }}> */}
-            <ClientList index={index} setIndex={setIndex} />
+            <ClientList
+              client={client}
+              setClient={setClient}
+              index={index}
+              setIndex={setIndex}
+            />
           </div>
         </div>
         <div></div>
