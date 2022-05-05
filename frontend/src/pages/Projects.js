@@ -47,6 +47,24 @@ const Projects = () => {
     getAllProjectData();
   };
 
+  const handleDelete = async (event, id) => {
+    event.preventDefault();
+    console.log("Deleting Project", id);
+
+    const deleteProjectData = async () => {
+      await axios
+        .delete(`http://127.0.0.1:8000/projects/del_project/${id}`)
+        .then((res) => {
+          if (res.data.status === "ok") {
+            console.log("Project Deleted");
+          }
+        })
+        .catch((err) => console.error(err));
+    };
+    await deleteProjectData();
+    await getAllProjectData();
+  };
+
   return (
     <>
       <div>
@@ -89,6 +107,13 @@ const Projects = () => {
                   <p class="card-text">{element.project_info}</p>
                   <a href="#" class="btn btn-secondary">
                     Send document
+                  </a>
+                  <a
+                    href="#"
+                    class="btn btn-secondary ms-1"
+                    onClick={(event) => handleDelete(event, element.id)}
+                  >
+                    Delete
                   </a>
                 </div>
               </div>

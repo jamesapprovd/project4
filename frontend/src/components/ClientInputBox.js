@@ -41,6 +41,9 @@ const ClientInputBox = (props) => {
     };
     await submitClientData();
     await getAllData();
+    setName("");
+    setIdNumber("");
+    setRepresentative("");
   };
 
   return (

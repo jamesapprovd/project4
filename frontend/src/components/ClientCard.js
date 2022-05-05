@@ -43,25 +43,13 @@ const ClientCard = ({
               >
                 Delete
               </a>
-              <a
-                href="/projects"
-                class="btn btn-secondary ms-1"
-                // onClick={handleProject}
-              >
+              <a href="/projects" class="btn btn-secondary ms-1">
                 Projects
               </a>
             </div>
           </div>
-
-          {/* <p>{name}</p>
-          <p>{id_number}</p>
-          <p>{representative}</p> */}
         </div>
       )}
-      {/* <div> */}
-      {/* <button onClick={handleView}>Edit</button>
-      <button onClick={(e) => handleDelete(e, id)}>Delete</button> */}
-      {/* </div> */}
     </>
   );
 };
