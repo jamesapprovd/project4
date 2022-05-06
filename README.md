@@ -94,6 +94,17 @@ This project was built using the following, contributed by using standard Git fl
 
 ---
 
+## Installation instructions
+
+1. Download all of the server and front end Node dependencies by running this command in the root folder:
+    `npm install`
+2. Launch the application via the command:
+    `npm run dev`
+
+3. On most devices, your computer will open up a browser automatically and load the web application. In case it doesn't, open http://localhost:3000 in any browser of your choice to use the web application.
+
+
+
 ### Future features
 
 The following add-on features may be considered in future iterations of the RoboCorp app:
