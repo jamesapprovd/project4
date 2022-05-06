@@ -12,6 +12,8 @@ Small businesses or sole proprietors typically deal with many clients or client 
 
 A simple, intuitive and easy to use web application to allow resource constrained startups and sole proprietors to track clients, projects, and document stages.
 
+![App Screenshot](https://i.imgur.com/5gS4kr8.png)
+
 ---
 
 ## Key features and functions
