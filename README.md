@@ -64,13 +64,13 @@ The user experience of RoboCorp is intended to be simple and easy to navigate. U
 
 This project was built using the following, contributed by using standard Git flow on Github
 
-```
 - React framework 
 - BootStrap for CSS
 - Axios for API calls
 - Python/Django backend stack
 
 ---
+
 
 ## API Routes
 | Route  | HTTP Verb | Purpose |
@@ -83,8 +83,6 @@ This project was built using the following, contributed by using standard Git fl
 | `/projects/add_project`  | PUT | Add a project |
 | `/projects/del_project`  | DELETE | Delete a particular project |
 
-
-```
 
 ### Future features
 
