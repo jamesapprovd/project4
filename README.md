@@ -4,11 +4,15 @@ RoboCorp is a web application designed for small businesses and sole proprietors
 
 ## User Problem
 
-Small businesses or sole proprietors typically deal with many clients or client prospects in their businesses. If tracking is not done properly, it may result in a lot of time wasted finding the right client contact or project contact to deal with. Failure to track client relationships efficiently may lead to loss of potential business opportunities, which will impact small startups greater than larger companies. In addition, there are many documents required throughout a client relationship life cycle, ranging from Non-Disclosure Agreements prior to the start of the client relationship, and as a business scales, it gets increasingly difficult to manage such administrative documents and relationship at scale.
+Small businesses or sole proprietors typically deal with many clients or client prospects in their businesses. If tracking is not done properly, it may result in time wasted finding the right client contact or project contact, or even the loss of potential business opportunities. In addition, there are many documents required throughout a client relationship life cycle, and as a business scales, it gets increasingly difficult to manage such administrative documents and client relationships at scale.
+
+---
 
 ## Proposed Solution
 
 A simple, intuitive and easy to use web application to allow resource constrained startups and sole proprietors to track clients, projects, and document stages.
+
+---
 
 ## Key features and functions
 
@@ -24,17 +28,23 @@ RoboCorp’s document repository provides links to the most commonly used templa
 
 Client’s projects are similarly listed in a separate section to allow easy tracking, management and an organised ledger of current ongoing projects. 
 
+---
+
 ### Wireframes
 
 The planning sketch of the project, pre-build:
 
 ![Main Page Wireframe](https://i.imgur.com/14GgRXs.png)
 
+---
+
 ### Database Schema
 
 RoboCorp was built using SQL with the following database schema
 
 ![Backend Data Flow Chart](https://i.imgur.com/Vsend7L.png)
+
+---
 
 ### User Stories
 
@@ -57,12 +67,11 @@ The user experience of RoboCorp is intended to be simple and easy to navigate. U
 - Delete project information
 
 ```
-
 ---
 
 ### Technical Usage
 
-This project was built using the following, contributed by using standard Git flow on Github
+This project was built using the following, contributed by using standard Git flow on Github:
 
 - React framework 
 - BootStrap for CSS
@@ -83,6 +92,7 @@ This project was built using the following, contributed by using standard Git fl
 | `/projects/add_project`  | PUT | Add a project |
 | `/projects/del_project`  | DELETE | Delete a particular project |
 
+---
 
 ### Future features
 
