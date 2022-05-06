@@ -2,6 +2,14 @@
 
 RoboCorp is a web application designed for small businesses and sole proprietors to track their clients and their projects, using a simple customer relationship management (CRM) user interface. 
 
+## User Problem
+
+Small businesses or sole proprietors typically deal with many clients or client prospects in their businesses. If tracking is not done properly, it may result in a lot of time wasted finding the right client contact or project contact to deal with. Failure to track client relationships efficiently may lead to loss of potential business opportunities, which will impact small startups greater than larger companies. In addition, there are many documents required throughout a client relationship life cycle, ranging from Non-Disclosure Agreements prior to the start of the client relationship, and as a business scales, it gets increasingly difficult to manage such administrative documents and relationship at scale.
+
+## Proposed Solution
+
+A simple, intuitive and easy to use web application to allow resource constrained startups and sole proprietors to track clients, projects, and document stages.
+
 ## Key features and functions
 
 1. Client management function
@@ -14,13 +22,18 @@ RoboCorp’s document repository provides links to the most commonly used templa
 
 3. Project listing function 
 
-Client’s projects are similarly listed in a separate section to allow easy tracking of current ongoing projects. 
+Client’s projects are similarly listed in a separate section to allow easy tracking, management and an organised ledger of current ongoing projects. 
 
 ### Wireframes
 
 The planning sketch of the project, pre-build:
 
 ![Main Page Wireframe](https://i.imgur.com/14GgRXs.png)
+
+### Database Schema
+
+RoboCorp was built using SQL with the following database schema
+
 ![Backend Data Flow Chart](https://i.imgur.com/Vsend7L.png)
 
 ### User Stories
@@ -38,6 +51,11 @@ The user experience of RoboCorp is intended to be simple and easy to navigate. U
 - View all template documents in the document repository
 - Download and use such template documents for clients as needed
 
+3.
+- Create a new project, with relevant details
+- Read / View all projects created
+- Delete project information
+
 ```
 
 ---
@@ -51,6 +69,20 @@ This project was built using the following, contributed by using standard Git fl
 - BootStrap for CSS
 - Axios for API calls
 - Python/Django backend stack
+
+---
+
+## API Routes
+| Route  | HTTP Verb | Purpose |
+| :--- | :--- | :--- |
+| `/clients/view_all_clients` | GET  | View entire client list |
+| `/clients/add client`  | PUT | Add a client |
+| `/clients/update_client`  | PATCH | Update client details |
+| `/clients/del_client`  | DELETE | Delete a particular client |
+| `/projects/view_all_projects` | GET  | View entire project list |
+| `/projects/add_project`  | PUT | Add a project |
+| `/projects/del_project`  | DELETE | Delete a particular project |
+
 
 ```
 
